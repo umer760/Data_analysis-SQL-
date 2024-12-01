@@ -4,6 +4,7 @@ select * from Sales_Data$
 select Product,[Price Each],count(Product) as t from Sales_Data$
 group by Product,[Price Each]
 order by t desc
+#because its cheaper and affordable
 
 --4Which products are most often sold together?
 with temp as(
@@ -15,7 +16,7 @@ having Sold_Together like '%+%'
 order by Quantity_Sold desc 
 
 --3What time should we display advertisemens
---to maximize the likelihood of customer’s buying product?
+--to maximize the likelihood of customerâ€™s buying product?
 select [Time_Group],sum([Sales]) as [Best_Timesale]
 from Sales_Data$
 group by [Time_Group]
